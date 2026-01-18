@@ -13,6 +13,30 @@ with st.sidebar:
     st.title("📚 Navigation")
     st.markdown("### Select an Assignment:")
     st.info("Click on any page below to explore the analysis")
+    
+    st.markdown("---")
+    
+    # Page navigation links
+    if st.button("🏠 Home", use_container_width=True):
+        st.switch_page("streamlit_app.py")
+    
+    if st.button("📈 Assignment 1: EDA", use_container_width=True):
+        st.switch_page("pages/01_Assignment_1_EDA.py")
+    
+    if st.button("📊 Assignment 2: Probability", use_container_width=True):
+        st.switch_page("pages/02_Assignment_2_Probability.py")
+    
+    if st.button("📉 Assignment 3.1: Linear Regression", use_container_width=True):
+        st.switch_page("pages/03_Assignment_3_Part_1_Linear_Regression.py")
+    
+    if st.button("📉 Assignment 3.2: Regularization", use_container_width=True):
+        st.switch_page("pages/04_Assignment_3_Part_2_Regularization.py")
+    
+    if st.button("📉 Assignment 3.3: Non-Linear", use_container_width=True):
+        st.switch_page("pages/05_Assignment_3_Part_3_NonLinear.py")
+    
+    if st.button("🤖 Assignment 4: Classification", use_container_width=True):
+        st.switch_page("pages/06_Assignment_4_Classification.py")
 
 # Title and description
 st.title("📊 Statistical Learning & Data Analysis")
