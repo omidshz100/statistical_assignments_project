@@ -8,6 +8,12 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# Sidebar navigation
+with st.sidebar:
+    st.title("📚 Navigation")
+    st.markdown("### Select an Assignment:")
+    st.info("Click on any page below to explore the analysis")
+
 # Title and description
 st.title("📊 Statistical Learning & Data Analysis")
 st.markdown("""
