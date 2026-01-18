@@ -13,11 +13,6 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 import os
 
-st.set_page_config(
-    page_title="EDA: Student Habits & Performance",
-    page_icon="📈",
-    layout="wide",
-)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(BASE_DIR, "student_habits_performance.csv")
 sns.set_style("whitegrid")
