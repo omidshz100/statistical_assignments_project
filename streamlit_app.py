@@ -54,48 +54,46 @@ with col2:
 
 st.markdown("---")
 
-st.markdown("""
-### 📍 Navigation
-
-**👈 Use the sidebar menu** to navigate between assignments. Each page includes:
-- Complete analysis code
-- Interactive visualizations
-- Interpretative insights
-- Statistical explanations
-""")
-
-# Assignment overview cards
-st.markdown("### 📚 Assignments Overview")
+st.markdown("---")
+st.markdown("### 📍 Navigate to Assignments")
+st.markdown("Click on any assignment below to view the interactive analysis:")
 
 col1, col2 = st.columns(2)
 
 with col1:
-    st.markdown("""
-    #### 📈 Assignment 1: Exploratory Data Analysis
-    *Student habits & performance dataset analysis with PCA and clustering*
+    with st.container(border=True):
+        st.markdown("#### 📈 Assignment 1: Exploratory Data Analysis")
+        st.markdown("*Student habits & performance dataset analysis with PCA and clustering*")
+        st.markdown("[**📊 View Assignment 1 →**](/Assignment_1_EDA)")
     
-    #### 📊 Assignment 2: Probability Models
-    *Comparing exponential, uniform, and normal distributions*
+    with st.container(border=True):
+        st.markdown("#### 📊 Assignment 2: Probability Models")
+        st.markdown("*Comparing exponential, uniform, and normal distributions*")
+        st.markdown("[**🎲 View Assignment 2 →**](/Assignment_2_Probability)")
     
-    #### 📉 Assignment 3.1: Linear Regression
-    *Simple and multiple linear regression analysis*
-    """)
+    with st.container(border=True):
+        st.markdown("#### 📉 Assignment 3.1: Linear Regression")
+        st.markdown("*Simple and multiple linear regression analysis*")
+        st.markdown("[**📈 View Assignment 3.1 →**](/Assignment_3_Part_1_Linear_Regression)")
 
 with col2:
-    st.markdown("""
-    #### 📉 Assignment 3.2: Regularization
-    *Ridge and Lasso regression techniques*
+    with st.container(border=True):
+        st.markdown("#### 📉 Assignment 3.2: Regularization")
+        st.markdown("*Ridge and Lasso regression techniques*")
+        st.markdown("[**⚖️ View Assignment 3.2 →**](/Assignment_3_Part_2_Regularization)")
     
-    #### 📉 Assignment 3.3: Non-Linear Models
-    *Polynomial and non-linear regression*
+    with st.container(border=True):
+        st.markdown("#### 📉 Assignment 3.3: Non-Linear Models")
+        st.markdown("*Polynomial and non-linear regression*")
+        st.markdown("[**🔄 View Assignment 3.3 →**](/Assignment_3_Part_3_NonLinear)")
     
-    #### 🤖 Assignment 4: Classification
-    *Machine learning classification models*
-    """)
+    with st.container(border=True):
+        st.markdown("#### 🤖 Assignment 4: Classification")
+        st.markdown("*Machine learning classification models*")
+        st.markdown("[**🎯 View Assignment 4 →**](/Assignment_4_Classification)")
 
 st.markdown("---")
-
-st.info("💡 **Tip**: Click on any assignment in the sidebar (left) to start exploring!", icon="ℹ️")
+st.info("💡 **Note**: You can also use the sidebar menu (☰) in the top-left to navigate between pages!", icon="ℹ️")
 
 st.markdown("---")
 
