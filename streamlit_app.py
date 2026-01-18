@@ -57,22 +57,43 @@ st.markdown("---")
 st.markdown("""
 ### 📍 Navigation
 
-Use the **sidebar menu** to navigate between assignments. Each page includes:
-- Complete analysis code
-- Interactive visualizations
-- Interpretative insights
-- Statistical explanations
+Select an assignment below to view the interactive analysis:
+""")
 
+# Assignment navigation cards
+st.markdown("### 📚 Assignments")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.page_link("pages/01_Assignment_1_EDA.py", label="📈 Assignment 1: Exploratory Data Analysis", icon="📊")
+    st.markdown("*Student habits & performance dataset analysis with PCA and clustering*")
+    
+    st.page_link("pages/02_Assignment_2_Probability.py", label="📊 Assignment 2: Probability Models", icon="🎲")
+    st.markdown("*Comparing exponential, uniform, and normal distributions*")
+    
+    st.page_link("pages/03_Assignment_3_Part_1_Linear_Regression.py", label="📉 Assignment 3.1: Linear Regression", icon="📈")
+    st.markdown("*Simple and multiple linear regression analysis*")
+
+with col2:
+    st.page_link("pages/04_Assignment_3_Part_2_Regularization.py", label="📉 Assignment 3.2: Regularization", icon="⚖️")
+    st.markdown("*Ridge and Lasso regression techniques*")
+    
+    st.page_link("pages/05_Assignment_3_Part_3_NonLinear.py", label="📉 Assignment 3.3: Non-Linear Models", icon="🔄")
+    st.markdown("*Polynomial and non-linear regression*")
+    
+    st.page_link("pages/06_Assignment_4_Classification.py", label="🤖 Assignment 4: Classification", icon="🎯")
+    st.markdown("*Machine learning classification models*")
+
+st.markdown("---")
+
+st.markdown("""
 ### 💡 Key Features
 
 ✅ **Interactive Exploration** - Adjust parameters and see results in real-time  
 ✅ **Professional Visualizations** - Publication-ready plots and charts  
 ✅ **Statistical Rigor** - Proper diagnostics and validation  
 ✅ **Interpretable Results** - Clear explanations of findings  
-
----
-
-**Start exploring** by selecting an assignment from the sidebar!
 """)
 
 # Footer
