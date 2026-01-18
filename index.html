@@ -235,6 +235,79 @@
             display: block;
         }
 
+        /* Auth Overlay */
+        .auth-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .auth-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            width: 100%;
+            max-width: 420px;
+            padding: 32px;
+        }
+
+        .auth-title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .auth-subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 22px;
+        }
+
+        .auth-input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: #f8fafc;
+            outline: none;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .auth-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+            background: #ffffff;
+        }
+
+        .auth-button {
+            width: 100%;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 12px;
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.05s ease, box-shadow 0.3s ease;
+        }
+
+        .auth-button:hover { box-shadow: var(--shadow-md); }
+        .auth-button:active { transform: translateY(1px); }
+
+        .auth-error {
+            display: none;
+            color: #ef4444;
+            font-size: 0.9rem;
+            margin: 6px 0 12px;
+        }
+
         /* Responsive */
         @media (max-width: 900px) {
             .hero-inner {
@@ -258,6 +331,18 @@
     </style>
 </head>
 <body>
+    <div id="auth-overlay" class="auth-overlay">
+        <div class="auth-card">
+            <div class="auth-title">Welcome</div>
+            <div class="auth-subtitle">Sign in to view the portfolio</div>
+            <form id="login-form">
+                <input type="text" id="login-username" class="auth-input" placeholder="Username" autocomplete="username">
+                <input type="password" id="login-password" class="auth-input" placeholder="Password" autocomplete="current-password">
+                <div id="login-error" class="auth-error">Invalid credentials</div>
+                <button type="submit" class="auth-button">Sign In</button>
+            </form>
+        </div>
+    </div>
     <div class="hero">
         <div class="container hero-inner">
             <div class="hero-content">
@@ -340,5 +425,44 @@
             <p style="margin-top: 10px; font-size: 0.85rem; opacity: 0.7;">© 2026 Omid Shojaeian. All rights reserved.</p>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+    const VALID_USERS = [
+        { username: 'demo_user', password: 'demo_pass', role: 'Student' },
+        { username: 'professor', password: 'prof123', role: 'Professor' }
+    ];
+    const EMAILJS_PUBLIC_KEY = 'gRr_k7DcvZTOTy-9R';
+    const EMAILJS_SERVICE_ID = 'service_usag79e';
+    const EMAILJS_TEMPLATE_ID = 'template_li9re3h';
+    const NOTIFY_WEBHOOK_URL = '';
+
+    function notifyLogin(payload) {
+        if (EMAILJS_PUBLIC_KEY && EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && typeof emailjs !== 'undefined') {
+            try { emailjs.init(EMAILJS_PUBLIC_KEY); emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, payload); } catch (e) {}
+        }
+        if (NOTIFY_WEBHOOK_URL) {
+            try { fetch(NOTIFY_WEBHOOK_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }); } catch (e) {}
+        }
+    }
+
+    function handleLogin(event) {
+        event.preventDefault();
+        const u = document.getElementById('login-username').value.trim();
+        const p = document.getElementById('login-password').value;
+        const err = document.getElementById('login-error');
+        const user = VALID_USERS.find(user => user.username === u && user.password === p);
+        if (user) {
+            err.style.display = 'none';
+            document.getElementById('auth-overlay').style.display = 'none';
+            const payload = { username: u, role: user.role, timestamp: new Date().toISOString(), page: window.location.href, userAgent: navigator.userAgent };
+            notifyLogin(payload);
+        } else {
+            err.style.display = 'block';
+        }
+    }
+
+    document.getElementById('login-form').addEventListener('submit', handleLogin);
+    document.getElementById('login-username').focus();
+    </script>
 </body>
 </html>
