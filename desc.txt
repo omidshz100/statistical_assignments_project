@@ -1,0 +1,203 @@
+Statistical Learning and Data Analysis
+Assignment 1: Exploratory Data Analysis (EDA)
+You can work in a team (up to 3 members, with an heterogeneous composition in terms of bachelor
+degree and country of provenience). For the submission of the Assignment 1 please follow the
+instructions at the link: https://forms.gle/8qfUfk9FcDfUcDdw8
+DATASET AND GOAL
+You are provided with a selection of datasets, pick one.
+Your goal is to perform a complete Exploratory Data Analysis (EDA) by answering the following questions
+step by step.
+Each section builds upon the previous one.
+OUTPUT REQUIREMENTS
+The assignment must be submitted with a file containing code, plots and brief interpretations: all plots should
+have clear titles, labels and legends (when required) and each section should include at least one short
+commentary interpreting the results. The same file should be presented in the following formats:
+- .ipynb or .Rmd
+- .pdf or .html
+Moreover, a short presentation should also be produced for the exam dissertation. The presentation should
+not be a copy of the code notebook. It should focus on interpreting the results and communicating them
+clearly, with clean visuals and minimal text instead.
+1) DATA LOADING & CLEANING
+• Import the dataset and display the first few rows. What are the variable names and their data types
+(numeric, categorical, etc.)?
+• How many observations and variables are there?
+• Are there any missing values? In which columns and in what proportion?
+• How would you handle the missing values (removal, imputation, …)?
+2) UNIVARIATE DATA DESCRIPTION
+• Compute descriptive statistics (mean, median, min, max, standard deviation, etc…) for all numeric
+variables.
+• Create frequency tables for categorical variables.
+• Plot histograms and boxplots for numeric variables. What can you say about the distribution shape?
+• Plot bar charts or pie charts for categorical variables. Which category is the most frequent?
+3) BIVARIATE AND MULTIVARIATE DESCRIPTION
+• Compute correlations among numeric variables and visualize them with a correlation heatmap.
+• Create scatterplots for pairs of numeric variables. Do you observe linear or nonlinear relationships?
+• Compare the distributions of a numeric variable across categories.
+• If there are multiple categorical variables, build a contingency table.
+4) PRINCIPAL COMPONENT ANALYSIS AND CLUSTERING
+• Scale and encode the variable, then apply a Principal Component Analysis.
+• How many components are required to explain at least 80% of the variance?
+• Visualize the loading vectors on a correlation circle, and the observations on a biplot. What patterns or
+grouping do you observe? What the two principal components represent?
+• Select a clustering algorithm
+• Determine the optimal number of clusters (using the desired method)
+• Visualize the resulting clusters. Are they well separated.
+5) SUMMARY AND INTERPRETATION
+• Summarize in a few sentences the main characteristics of the dataset.
+• Have you identified any interesting patterns, or differences through the analysis.
+
+
+
+
+Statistical Learning and Data Analysis
+Assignment 2: Probability Models Comparison
+You can work in a team (up to 3 members, with an heterogeneous composition in terms of bachelor degree and country of provenience). For the submission of the Assignment 2 please follow the instructions at the link: https://forms.gle/ZRVqqdeo8RkeY2oy8
+MODELS AND GOAL
+From the following list of pairs select one:
+- Exponential and Poisson
+- Binomial and Pascal
+- Beta and Gamma
+- Weibul and Gamma
+The goal of this assignment is to go in-depth in a pair of probability models showing their relationships and differences and which real world problems they can describe. Students will
+explore their probability density (or mass) functions, parameters, moments, and applications, both
+analytically and through sampling.
+OUTPUT REQUIREMENTS
+The assignment must be submitted with a file containing code, plots and interpretation: all plots should have clear titles and labels, and all equations should be well formatted . The same file
+should be presented in the following formats:
+- .rmd or .ipynb
+- .html or .pdf
+Moreover, a short presentation should also be produced for the exam discussion. The presentation
+should not be a copy of the code of the notebook. It should focus on interpreting the results and
+communicating them clearly, with clean visuals and minimal text.
+1) THEORETICAL COMPARISON
+• Write the probability density (or mass) function for each distribution. Identify and describe all
+parameters.
+• Report the expressions for the mean and variance. How do these quantities depend on the
+parameters?
+• Plot the distributions for different parameter values. How does changing each parameter affect the shape (e.g., symmetry, spread, skewness)?
+• Explain the practical meaning of the parameters in real-world contexts. When would one distribution be more suitable than the other?
+• Discuss the connection between your chosen distributions and the Gaussian probability model.
+Do they converge to the Normal distribution under specific circumstances? Do they relate to it
+through transformations or asymptotic behavior? Include formulas and visual examples where
+appropriate.
+2) SIMULATION STUDY
+• Generate random samples (e.g., 1000 observations) from each of the two distributions using different parameter combinations
+• Plot histograms or/and density plots to visualize how the simulated data compare to the
+theoretical distributions.
+• Compute the sample mean and variance, and compare them with the theoretical values.
+• Discuss whether the empirical results are consistent with the theory.
+3) APPLICATION SCENARIO
+• Invent a context (realistic or hypothetical) in which the chosen distributions could model
+observable data.
+• Clearly describe the nature of the random variable(s) involved, the assumption that justify the use
+of each distribution, the parameters of the model and how they could be interpreted.
+• Simulate and analyze a dataset consistent with your scenario.
+SUGGESTED TOOLS
+R: the following functions are built-in and can be used for generating the ranom samples: rbeta(),
+rgamma(), rbinom(), rpois(), rexp(). Use the help function "?" in R to check how to use them.
+Python: from scipy.stats you can import beta, gamma, binom, poisson, expon. Check at the
+following link how to use them: https://docs.scipy.org/doc/scipy/reference/stats.html
+LaTex: check at the following link how to add images and write formulas in the notebook: https://
+www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes
+
+
+
+Statistical Learning and Data Analysis
+Assignment 3: Regression and Data Simulation
+You can work in a team (up to 3 members, with an heterogeneous composition in terms of bachelor degree and country of provenience). For the submission of the Assignment 3 please follow the instructions at the link: https://forms.gle/JT7EzCohvnq58wPDA
+MODELS AND GOAL
+This assignment is divided into three thematic blocks, each focused on a different modeling
+challenge. You will simulate datasets, fit various regression models, perform diagnostics, and
+provide interpretative comments based on statistical reasoning.
+OUTPUT REQUIREMENTS
+The assignment must be submitted with a file containing code, plots and interpretation: all plots should have clear titles and labels, and all equations should be well formatted . The same file
+should be presented in the following formats:
+- .rmd or .ipynb
+- .html or .pdf
+Moreover, a short presentation should also be produced for the exam discussion. The presentation
+should not be a copy of the code of the notebook. It should focus on interpreting the results and
+communicating them clearly, with clean visuals and minimal text.
+1) DATA SET SIMULATION AND LINEAR REGRESSION
+• Start by simulating data from a linear function with p=10 and n=300, where only some have meaningful effects (associate large coefficients to a few variables and to the remaining ones
+smaller or null coefficients, you choose the coefficients). Write down your chosen function and justify your choices. Comment on randomness and error.
+• Fit a Linear Regression model on the simulated dataset. Report estimated coefficients,
+standard errors, p-values, t-statistics, etc…
+• Which predictors appear statistically significant? Do the significant variables match the ones you
+originally set with strong coefficients?
+• Using the residuals perform a regression diagnostic on the model.
+• Identify high leverage points, influential observations and outliers. Comment on how they might
+effect model stability.
+2) SHRINKAGE AND REGULARIZATION
+• Using the same dataset fit a Ridge Regression model. Use cross-validation to select the
+optimal lambda. Plot the coefficient paths. How much different are the estimated coefficients
+from the true generating ones?
+• Fit a Lasso Regression model. Use cross-validation to select the optimal lambda. Plot the
+coefficient paths. Which coefficients shrunk exactly to zero? Compare variable selection with
+your true generating beta.
+• Fit an Elastic-Net Regression model. Use cross-validation to find the optimal combination of
+alpha and lambda (you can do this either with grid-search or with a graphical approach).
+3) NON-LINEAR REGRESSION AND BIAS-VARIANCE EXPERIMENT
+• Chose a new generating function that is not linear (exponential, polynomial, trigonometric or a combination) and simulate a dataset with p = 1 and n = 10. Plot the true generating function and
+the observed points.
+• Fit two polynomial regression models: one with a degree lower than 10 and one with degree equal to ten. Plot both regression curves, the true generating function and the observed points. What do you notice? Which model yields the lowest train error? Which model is closer to the
+true generating function? Why does the 10 degrees polynomial regression interpolates all points? Describe and comment the bias-variance trade-off in this context.
+• Using the same underlying function simulate a new dataset with p = 1 and n > 100. Fit again the
+10 degrees polynomial regression model. Plot and compre the two 10 degrees polynomial
+regression lines. Which model presents a less extreme overfitting? Comment on why.
+• Using the same dataset, fit non-linear regression models selected among those proposed during lecture. Find the optimal parameters (depending on the selected models). Compare the fitted curves and the true generating function. Compare performances among the models.
+SUGGESTED TOOLS
+Please refer to the accompanying guide (available in both Python and R). It contains functions
+that you can directly copy and paste into your notebook to generate the required datasets, along
+with clear instructions on how to use them and several illustrative examples
+
+Statistical Learning and Data Analysis
+Assignment 4: Classification & Final Project
+You can work in a team (up to 3 members, with an heterogeneous composition in terms of bachelor degree and country of provenience). For the submission of the Assignment 4 please follow the instructions at the link: https://forms.gle/RJ8gGh6mkzikxG2c8
+MODELS AND GOAL
+This final assignment is designed to give you freedom in demonstrating what you have learned
+throughout the course. Your task is to develop a complete data analysis project on a classification
+problem of your choice. You are encouraged to explore the topics and methods that you feel most
+confident with—or that you want to experiment with further.
+The goal is not to follow a rigid set of instructions, but rather to showcase your skills, your
+analytical reasoning, and your ability to structure a coherent and well-justified workflow.
+OUTPUT REQUIREMENTS
+The assignment must be submitted with a file containing code, plots and interpretation: all plots should have clear titles and labels, and all equations should be well formatted . The same file
+should be presented in the following formats:
+- .rmd or .ipynb
+- .html or .pdf
+Moreover, a short presentation should also be produced for the exam discussion. The presentation
+should not be a copy of the code of the notebook. It should focus on interpreting the results and
+communicating them clearly, with clean visuals and minimal text.
+GENERAL REQUIREMENTS
+• Your project must involve a supervised classification task.
+• You are free to choose the dataset (public datasets are fine; you may also use datasets
+provided by us).
+• Your work should follow a clear narrative, explaining what you are doing and why.
+Beyond these points, everything is flexible: you decide what to include and how deep to go.
+SUGGESTED STRUCTURE
+You can follow the outline below, but you are free to adapt it, merge sections, expand some parts
+and skip others—as long as your choices are well-motivated.
+• Real-World Motivation & Problem Definition (The real-world context of your classification
+problem. Why the problem matters. What is the response variable. What are the classes. What
+type of classification setting is it.
+You are free to select any dataset, but justify why it is interesting.
+• Exploratory Data Analysis (Inspect dataset structure and variables. Summary statistics.
+Exploratory plots. Highlight potential challenges)
+• Preprocessing Pipeline (Train/test split. Dealing with missing values. Encoding categorical
+variables. Feature scaling. Feature engineering. Dealing with class imbalance. Dimensionality
+reduction)
+• Unsupervised Analysis (Clustering to explore structure. Dimensionality reduction for
+visualization. Using clustering as part of your preprocessing or feature engineering)
+• Model Building (You have complete freedom here. Choose the models you want to try. Explain
+the intuition behind the model. Why you chose it .Any hyperparameter you decided to tune)
+• Model Tuning and Resampling (K-fold cross-validation. Grid search. Comparison of validation
+curves)
+• Model Evaluation (Choose appropriate metrics based on your problem. You can present results
+for a single model or compare multiple models. The key is to explain what your results mean)
+• Interpretation and Insights (Depending on the models. Variable importance. Decision
+boundaries. Tree visualization, ecc…)
+• Final Discussion (A brief summary. What you learned about the data. What worked well and
+what didn’t. Whether your model(s) performed well enough. What could be improved with more
+time or data. Any “real-world” implications of your model)
+
+
