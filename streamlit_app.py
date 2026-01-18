@@ -1,4 +1,5 @@
 import streamlit as st
+from pathlib import Path
 
 # Page configuration
 st.set_page_config(
@@ -64,36 +65,42 @@ with col1:
     with st.container(border=True):
         st.markdown("#### 📈 Assignment 1: Exploratory Data Analysis")
         st.markdown("*Student habits & performance dataset analysis with PCA and clustering*")
-        st.markdown("[**📊 View Assignment 1 →**](/Assignment_1_EDA)")
+        if st.button("📊 Open Assignment 1", key="btn1", use_container_width=True):
+            st.switch_page("pages/01_Assignment_1_EDA.py")
     
     with st.container(border=True):
         st.markdown("#### 📊 Assignment 2: Probability Models")
         st.markdown("*Comparing exponential, uniform, and normal distributions*")
-        st.markdown("[**🎲 View Assignment 2 →**](/Assignment_2_Probability)")
+        if st.button("🎲 Open Assignment 2", key="btn2", use_container_width=True):
+            st.switch_page("pages/02_Assignment_2_Probability.py")
     
     with st.container(border=True):
         st.markdown("#### 📉 Assignment 3.1: Linear Regression")
         st.markdown("*Simple and multiple linear regression analysis*")
-        st.markdown("[**📈 View Assignment 3.1 →**](/Assignment_3_Part_1_Linear_Regression)")
+        if st.button("📈 Open Assignment 3.1", key="btn3", use_container_width=True):
+            st.switch_page("pages/03_Assignment_3_Part_1_Linear_Regression.py")
 
 with col2:
     with st.container(border=True):
         st.markdown("#### 📉 Assignment 3.2: Regularization")
         st.markdown("*Ridge and Lasso regression techniques*")
-        st.markdown("[**⚖️ View Assignment 3.2 →**](/Assignment_3_Part_2_Regularization)")
+        if st.button("⚖️ Open Assignment 3.2", key="btn4", use_container_width=True):
+            st.switch_page("pages/04_Assignment_3_Part_2_Regularization.py")
     
     with st.container(border=True):
         st.markdown("#### 📉 Assignment 3.3: Non-Linear Models")
         st.markdown("*Polynomial and non-linear regression*")
-        st.markdown("[**🔄 View Assignment 3.3 →**](/Assignment_3_Part_3_NonLinear)")
+        if st.button("🔄 Open Assignment 3.3", key="btn5", use_container_width=True):
+            st.switch_page("pages/05_Assignment_3_Part_3_NonLinear.py")
     
     with st.container(border=True):
         st.markdown("#### 🤖 Assignment 4: Classification")
         st.markdown("*Machine learning classification models*")
-        st.markdown("[**🎯 View Assignment 4 →**](/Assignment_4_Classification)")
+        if st.button("🎯 Open Assignment 4", key="btn6", use_container_width=True):
+            st.switch_page("pages/06_Assignment_4_Classification.py")
 
 st.markdown("---")
-st.info("💡 **Note**: You can also use the sidebar menu (☰) in the top-left to navigate between pages!", icon="ℹ️")
+st.info("💡 **Note**: You can also use the hamburger menu (☰) in the top-left to access the sidebar navigation!", icon="ℹ️")
 
 st.markdown("---")
 
