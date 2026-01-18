@@ -61,35 +61,35 @@ col1, col2 = st.columns(2)
 
 with col1:
     with st.container(border=True):
-        st.markdown("#### 📈 Assignment 1: Exploratory Data Analysis")
-        st.markdown("*Student habits & performance dataset analysis with PCA and clustering*")
-        st.link_button("📊 Open Assignment 1", "Assignment_1_EDA", use_container_width=True)
+        st.markdown("#### 📈 Assignment 1: EDA")
+        st.caption("Student habits & performance dataset analysis")
+        st.page_link("pages/01_Assignment_1_EDA.py", label="Open Assignment 1", icon="📊")
     
     with st.container(border=True):
-        st.markdown("#### 📊 Assignment 2: Probability Models")
-        st.markdown("*Comparing exponential, uniform, and normal distributions*")
-        st.link_button("🎲 Open Assignment 2", "Assignment_2_Probability", use_container_width=True)
+        st.markdown("#### 📊 Assignment 2: Probability")
+        st.caption("Comparing exponential, uniform, and normal distributions")
+        st.page_link("pages/02_Assignment_2_Probability.py", label="Open Assignment 2", icon="🎲")
     
     with st.container(border=True):
-        st.markdown("#### 📉 Assignment 3.1: Linear Regression")
-        st.markdown("*Simple and multiple linear regression analysis*")
-        st.link_button("📈 Open Assignment 3.1", "Assignment_3_Part_1_Linear_Regression", use_container_width=True)
+        st.markdown("#### 📉 Assignment 3.1: Regression")
+        st.caption("Simple and multiple linear regression analysis")
+        st.page_link("pages/03_Assignment_3_Part_1_Linear_Regression.py", label="Open Assignment 3.1", icon="📈")
 
 with col2:
     with st.container(border=True):
         st.markdown("#### 📉 Assignment 3.2: Regularization")
-        st.markdown("*Ridge and Lasso regression techniques*")
-        st.link_button("⚖️ Open Assignment 3.2", "Assignment_3_Part_2_Regularization", use_container_width=True)
+        st.caption("Ridge and Lasso regression techniques")
+        st.page_link("pages/04_Assignment_3_Part_2_Regularization.py", label="Open Assignment 3.2", icon="⚖️")
     
     with st.container(border=True):
-        st.markdown("#### 📉 Assignment 3.3: Non-Linear Models")
-        st.markdown("*Polynomial and non-linear regression*")
-        st.link_button("🔄 Open Assignment 3.3", "Assignment_3_Part_3_NonLinear", use_container_width=True)
+        st.markdown("#### 📉 Assignment 3.3: Non-Linear")
+        st.caption("Polynomial and non-linear regression")
+        st.page_link("pages/05_Assignment_3_Part_3_NonLinear.py", label="Open Assignment 3.3", icon="🔄")
     
     with st.container(border=True):
         st.markdown("#### 🤖 Assignment 4: Classification")
-        st.markdown("*Machine learning classification models*")
-        st.link_button("🎯 Open Assignment 4", "Assignment_4_Classification", use_container_width=True)
+        st.caption("Machine learning classification models")
+        st.page_link("pages/06_Assignment_4_Classification.py", label="Open Assignment 4", icon="🎯")
 
 st.markdown("---")
 st.info("💡 **Note**: You can also use the hamburger menu (☰) in the top-left to access the sidebar navigation!", icon="ℹ️")
