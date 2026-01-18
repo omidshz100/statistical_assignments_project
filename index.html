@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omid Shojaeian | Statistical Learning Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e3a8a;
+            --secondary: #64748b;
+            --background: #f8fafc;
+            --surface: #ffffff;
+            --text-main: #0f172a;
+            --text-secondary: #475569;
+            --border: #e2e8f0;
+            --gradient-1: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--surface);
+            padding: 80px 0 60px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 60px;
+        }
+
+        .hero-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #eff6ff;
+            color: var(--primary);
+            font-size: 0.875rem;
+            font-weight: 600;
+            border-radius: 9999px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            max-width: 600px;
+        }
+
+        /* Profile Card */
+        .profile-card {
+            background: var(--surface);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            min-width: 320px;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: var(--gradient-1);
+        }
+
+        .profile-header {
+            margin-bottom: 20px;
+        }
+
+        .profile-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .profile-role {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .profile-location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .project-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .card-icon-wrapper {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: #eff6ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .project-card:hover .card-icon-wrapper {
+            background: var(--primary);
+            color: white;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .card-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .card-arrow {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .card-arrow svg {
+            transition: transform 0.2s ease;
+        }
+
+        .project-card:hover .card-arrow svg {
+            transform: translateX(4px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: 60px 0;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .footer-logo {
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-inner {
+                flex-direction: column-reverse;
+                text-align: left;
+                gap: 40px;
+            }
+
+            .hero {
+                padding: 40px 0;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .profile-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="container hero-inner">
+            <div class="hero-content">
+                <span class="badge">PORTFOLIO EXCLUSIVE</span>
+                <h1>Statistical Learning<br>& Data Analysis</h1>
+                <p class="subtitle">A curated collection of master's level projects exploring EDA, probability theory, advanced regression modeling, and machine learning classification.</p>
+            </div>
+            
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="profile-name">Omid Shojaeian</div>
+                    <div class="profile-role">
+                        M.Sc. Candidate in Data Science<br>
+                        University of Naples Federico II
+                    </div>
+                </div>
+                <div class="profile-location">
+                    <span>📍</span> Naples, Italy 🇮🇹
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="projects-grid">
+            <!-- Assignment 1 -->
+            <a href="https://statisticalassignmentsproject-3pbbjvn7dacrinirv4c2bi.streamlit.app/Assignment_1_EDA" class="project-card">
+                <div class="card-icon-wrapper">📈</div>
+                <h3 class="card-title">Exploratory Data Analysis</h3>
+                <p class="card-desc">Comprehensive analysis of student habits using PCA dimensionality reduction, K-Means clustering, and advanced visualization.</p>
+                <div class="card-arrow">View Analysis <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </a>
+
+            <!-- Assignment 2 -->
+            <a href="https://statisticalassignmentsproject-3pbbjvn7dacrinirv4c2bi.streamlit.app/Assignment_2_Probability" class="project-card">
+                <div class="card-icon-wrapper">🎲</div>
+                <h3 class="card-title">Probability Simulation</h3>
+                <p class="card-desc">Statistical simulation comparing Exponential, Uniform, and Normal distributions against theoretical probability bounds.</p>
+                <div class="card-arrow">View Analysis <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </a>
+
+            <!-- Assignment 3.1 -->
+            <a href="https://statisticalassignmentsproject-3pbbjvn7dacrinirv4c2bi.streamlit.app/Assignment_3_Part_1_Linear_Regression" class="project-card">
+                <div class="card-icon-wrapper">📉</div>
+                <h3 class="card-title">Linear Regression</h3>
+                <p class="card-desc">Construction and diagnostic analysis of simple and multiple linear regression models with residual verification.</p>
+                <div class="card-arrow">View Analysis <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </a>
+
+            <!-- Assignment 3.2 -->
+            <a href="https://statisticalassignmentsproject-3pbbjvn7dacrinirv4c2bi.streamlit.app/Assignment_3_Part_2_Regularization" class="project-card">
+                <div class="card-icon-wrapper">⚖️</div>
+                <h3 class="card-title">Regularization Methods</h3>
+                <p class="card-desc">Implementation of Ridge and Lasso regression techniques to handle multicollinearity and optimize model performance.</p>
+                <div class="card-arrow">View Analysis <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </a>
+
+            <!-- Assignment 3.3 -->
+            <a href="https://statisticalassignmentsproject-3pbbjvn7dacrinirv4c2bi.streamlit.app/Assignment_3_Part_3_NonLinear" class="project-card">
+                <div class="card-icon-wrapper">🔄</div>
+                <h3 class="card-title">Non-Linear Modeling</h3>
+                <p class="card-desc">Advanced modeling of complex relationships using polynomial regression and non-linear curve fitting algorithms.</p>
+                <div class="card-arrow">View Analysis <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </a>
+
+            <!-- Assignment 4 -->
+            <a href="https://statisticalassignmentsproject-3pbbjvn7dacrinirv4c2bi.streamlit.app/Assignment_4_Classification" class="project-card">
+                <div class="card-icon-wrapper">🤖</div>
+                <h3 class="card-title">Classification Systems</h3>
+                <p class="card-desc">Comparative analysis of Logistic Regression, Decision Trees, and SVM classifiers with performance metrics.</p>
+                <div class="card-arrow">View Analysis <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <span class="footer-logo">Statistical Learning</span>
+            <p>Master's Program in Data Science • Federico II University</p>
+            <p style="margin-top: 10px; font-size: 0.85rem; opacity: 0.7;">© 2026 Omid Shojaeian. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
